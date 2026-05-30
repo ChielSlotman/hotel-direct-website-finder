@@ -20,7 +20,7 @@
       "title": "Hotel listing URLs",
       "type": "array",
       "description": "Public hotel listing URLs from travel platforms. The Actor will look for hotel names and public outbound website/contact links.",
-      "editor": "requestListSources",
+      "editor": "stringList",
       "prefill": [],
       "items": {
         "type": "string"
@@ -30,7 +30,7 @@
       "title": "Known hotel website URLs",
       "type": "array",
       "description": "Optional known hotel websites to scan directly for contact pages, emails, phones, and social links.",
-      "editor": "requestListSources",
+      "editor": "stringList",
       "prefill": [],
       "items": {
         "type": "string"
