@@ -1,77 +1,62 @@
 {
   "actorSpecification": 1,
-  "fields": {
-    "hotelName": {
-      "type": "string",
-      "title": "Hotel name"
-    },
-    "inputUrl": {
-      "type": "string",
-      "title": "Input URL"
-    },
-    "sourceType": {
-      "type": "string",
-      "title": "Source type"
-    },
-    "officialWebsite": {
-      "type": "string",
-      "title": "Official website"
-    },
-    "confidenceScore": {
-      "type": "number",
-      "title": "Confidence score"
-    },
-    "contactPage": {
-      "type": "string",
-      "title": "Contact page"
-    },
-    "email": {
-      "type": "string",
-      "title": "Email"
-    },
-    "phone": {
-      "type": "string",
-      "title": "Phone"
-    },
-    "instagram": {
-      "type": "string",
-      "title": "Instagram"
-    },
-    "facebook": {
-      "type": "string",
-      "title": "Facebook"
-    },
-    "linkedin": {
-      "type": "string",
-      "title": "LinkedIn"
-    },
-    "twitterX": {
-      "type": "string",
-      "title": "X / Twitter"
-    },
-    "address": {
-      "type": "string",
-      "title": "Address"
-    },
-    "city": {
-      "type": "string",
-      "title": "City"
-    },
-    "country": {
-      "type": "string",
-      "title": "Country"
-    },
-    "sourceSearchUrl": {
-      "type": "string",
-      "title": "Source search URL"
-    },
-    "pagesScanned": {
-      "type": "integer",
-      "title": "Pages scanned"
-    },
-    "scrapedAt": {
-      "type": "string",
-      "title": "Scraped at"
+  "title": "Hotel website matches",
+  "description": "Official hotel website, public contact page, email, phone, social link, and confidence-score records.",
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "hotelName",
+          "officialWebsite",
+          "confidenceScore",
+          "contactPage",
+          "email",
+          "phone",
+          "instagram",
+          "facebook",
+          "linkedin",
+          "twitterX",
+          "city",
+          "country",
+          "sourceType",
+          "pagesScanned",
+          "scrapedAt"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "hotelName": {
+            "label": "Hotel",
+            "format": "text"
+          },
+          "officialWebsite": {
+            "label": "Official website",
+            "format": "link"
+          },
+          "confidenceScore": {
+            "label": "Confidence",
+            "format": "number"
+          },
+          "contactPage": {
+            "label": "Contact page",
+            "format": "link"
+          },
+          "email": {
+            "label": "Email",
+            "format": "text"
+          },
+          "phone": {
+            "label": "Phone",
+            "format": "text"
+          },
+          "scrapedAt": {
+            "label": "Scraped at",
+            "format": "date"
+          }
+        }
+      }
     }
   }
 }

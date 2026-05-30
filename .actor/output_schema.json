@@ -1,51 +1,12 @@
 {
-  "actorSpecification": 1,
-  "views": {
-    "overview": {
+  "actorOutputSchemaVersion": 1,
+  "title": "Hotel website and contact results",
+  "properties": {
+    "hotelWebsiteMatches": {
+      "type": "string",
       "title": "Hotel website matches",
-      "transformation": {
-        "fields": [
-          "hotelName",
-          "officialWebsite",
-          "confidenceScore",
-          "contactPage",
-          "email",
-          "phone",
-          "instagram",
-          "facebook",
-          "linkedin",
-          "twitterX",
-          "city",
-          "country",
-          "sourceType",
-          "scrapedAt"
-        ]
-      },
-      "display": {
-        "component": "table",
-        "properties": {
-          "hotelName": {
-            "label": "Hotel"
-          },
-          "officialWebsite": {
-            "label": "Official website",
-            "format": "link"
-          },
-          "confidenceScore": {
-            "label": "Confidence"
-          },
-          "contactPage": {
-            "label": "Contact page",
-            "format": "link"
-          },
-          "email": {
-            "label": "Email"
-          },
-          "phone": {
-            "label": "Phone"
-          }
-        }
-      }
+      "description": "Clean public hotel website and contact records for lead generation, enrichment, and research workflows.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
     }
   }
 }
