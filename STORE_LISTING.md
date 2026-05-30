@@ -17,6 +17,3 @@ Lead Generation, Travel, Marketing, Data Enrichment, Web Scraping
 
 ## Tags
 hotel scraper, hotel leads, hotel websites, hotel contact finder, travel leads, hospitality, emails, phone numbers, social links, Apify, Make, Zapier, n8n, Google Sheets
-
-## Pricing
-Recommended launch pricing: pay per result at about $5.00 per 1,000 hotel records processed, or an equivalent per-successful-match event price.

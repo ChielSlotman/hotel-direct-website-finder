@@ -170,7 +170,3 @@ Yes. It can inspect public listing pages and look for likely official hotel webs
 ### Why is there a confidence score?
 
 Hotel names can be ambiguous. The confidence score helps you prioritize strong official website matches and review weak ones.
-
-## Pricing
-
-This Actor is designed for simple pay-per-result pricing. A practical launch price is around $5.00 per 1,000 hotel records processed, with final pricing shown on the Apify Store page.
