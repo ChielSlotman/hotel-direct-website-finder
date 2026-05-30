@@ -1,0 +1,51 @@
+{
+  "actorSpecification": 1,
+  "views": {
+    "overview": {
+      "title": "Hotel website matches",
+      "transformation": {
+        "fields": [
+          "hotelName",
+          "officialWebsite",
+          "confidenceScore",
+          "contactPage",
+          "email",
+          "phone",
+          "instagram",
+          "facebook",
+          "linkedin",
+          "twitterX",
+          "city",
+          "country",
+          "sourceType",
+          "scrapedAt"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "hotelName": {
+            "label": "Hotel"
+          },
+          "officialWebsite": {
+            "label": "Official website",
+            "format": "link"
+          },
+          "confidenceScore": {
+            "label": "Confidence"
+          },
+          "contactPage": {
+            "label": "Contact page",
+            "format": "link"
+          },
+          "email": {
+            "label": "Email"
+          },
+          "phone": {
+            "label": "Phone"
+          }
+        }
+      }
+    }
+  }
+}

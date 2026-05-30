@@ -1,0 +1,19 @@
+{
+  "hotelNames": [
+    "The Hoxton Amsterdam",
+    "Hotel Pulitzer Amsterdam"
+  ],
+  "listingUrls": [],
+  "websiteUrls": [],
+  "location": "Amsterdam, Netherlands",
+  "maxResults": 25,
+  "findContactPage": true,
+  "findEmails": true,
+  "findPhones": true,
+  "findSocials": true,
+  "deduplicateResults": true,
+  "proxyConfiguration": {
+    "useApifyProxy": true
+  },
+  "debugMode": false
+}

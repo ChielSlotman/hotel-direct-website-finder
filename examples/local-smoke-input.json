@@ -1,0 +1,14 @@
+{
+  "hotelNames": [
+    "The Hoxton Amsterdam"
+  ],
+  "location": "Amsterdam, Netherlands",
+  "maxResults": 3,
+  "findContactPage": true,
+  "findEmails": true,
+  "findPhones": true,
+  "findSocials": true,
+  "deduplicateResults": true,
+  "proxyConfiguration": null,
+  "debugMode": true
+}

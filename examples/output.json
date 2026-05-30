@@ -1,0 +1,22 @@
+[
+  {
+    "hotelName": "The Hoxton Amsterdam",
+    "inputUrl": null,
+    "sourceType": "hotelName",
+    "officialWebsite": "https://thehoxton.com/amsterdam/",
+    "confidenceScore": 92,
+    "contactPage": "https://thehoxton.com/amsterdam/contact/",
+    "email": "hello.amsterdam@thehox.com",
+    "phone": "+31 20 888 5555",
+    "instagram": "https://www.instagram.com/thehoxtonhotel/",
+    "facebook": "https://www.facebook.com/thehoxton",
+    "linkedin": "https://www.linkedin.com/company/the-hoxton",
+    "twitterX": "https://twitter.com/thehoxtonhotel",
+    "address": "Herengracht 255, Amsterdam",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "sourceSearchUrl": "https://duckduckgo.com/html/?q=The%20Hoxton%20Amsterdam%20official%20hotel%20website",
+    "pagesScanned": 2,
+    "scrapedAt": "2026-05-30T12:00:00.000Z"
+  }
+]

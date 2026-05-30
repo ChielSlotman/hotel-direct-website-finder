@@ -1,0 +1,77 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "hotelName": {
+      "type": "string",
+      "title": "Hotel name"
+    },
+    "inputUrl": {
+      "type": "string",
+      "title": "Input URL"
+    },
+    "sourceType": {
+      "type": "string",
+      "title": "Source type"
+    },
+    "officialWebsite": {
+      "type": "string",
+      "title": "Official website"
+    },
+    "confidenceScore": {
+      "type": "number",
+      "title": "Confidence score"
+    },
+    "contactPage": {
+      "type": "string",
+      "title": "Contact page"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Phone"
+    },
+    "instagram": {
+      "type": "string",
+      "title": "Instagram"
+    },
+    "facebook": {
+      "type": "string",
+      "title": "Facebook"
+    },
+    "linkedin": {
+      "type": "string",
+      "title": "LinkedIn"
+    },
+    "twitterX": {
+      "type": "string",
+      "title": "X / Twitter"
+    },
+    "address": {
+      "type": "string",
+      "title": "Address"
+    },
+    "city": {
+      "type": "string",
+      "title": "City"
+    },
+    "country": {
+      "type": "string",
+      "title": "Country"
+    },
+    "sourceSearchUrl": {
+      "type": "string",
+      "title": "Source search URL"
+    },
+    "pagesScanned": {
+      "type": "integer",
+      "title": "Pages scanned"
+    },
+    "scrapedAt": {
+      "type": "string",
+      "title": "Scraped at"
+    }
+  }
+}

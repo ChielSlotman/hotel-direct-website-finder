@@ -1,0 +1,101 @@
+{
+  "title": "Hotel Direct Website Finder input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "hotelNames": {
+      "title": "Hotel names",
+      "type": "array",
+      "description": "Hotel names to research. Add city/country in the location field for better matching.",
+      "editor": "stringList",
+      "prefill": [
+        "The Hoxton Amsterdam",
+        "Hotel Pulitzer Amsterdam"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "listingUrls": {
+      "title": "Hotel listing URLs",
+      "type": "array",
+      "description": "Public hotel listing URLs from travel platforms. The Actor will look for hotel names and public outbound website/contact links.",
+      "editor": "requestListSources",
+      "prefill": [],
+      "items": {
+        "type": "string"
+      }
+    },
+    "websiteUrls": {
+      "title": "Known hotel website URLs",
+      "type": "array",
+      "description": "Optional known hotel websites to scan directly for contact pages, emails, phones, and social links.",
+      "editor": "requestListSources",
+      "prefill": [],
+      "items": {
+        "type": "string"
+      }
+    },
+    "location": {
+      "title": "Location",
+      "type": "string",
+      "description": "Optional city, region, or country used to improve search accuracy.",
+      "editor": "textfield",
+      "prefill": "Amsterdam, Netherlands"
+    },
+    "maxResults": {
+      "title": "Maximum results",
+      "type": "integer",
+      "description": "Maximum hotel records to return.",
+      "minimum": 1,
+      "maximum": 500,
+      "default": 50,
+      "prefill": 25
+    },
+    "findContactPage": {
+      "title": "Find contact page",
+      "type": "boolean",
+      "description": "Scan the official website for a public contact page.",
+      "default": true
+    },
+    "findEmails": {
+      "title": "Find public emails",
+      "type": "boolean",
+      "description": "Extract only publicly visible email addresses from hotel websites/contact pages.",
+      "default": true
+    },
+    "findPhones": {
+      "title": "Find public phones",
+      "type": "boolean",
+      "description": "Extract only publicly visible phone numbers from hotel websites/contact pages.",
+      "default": true
+    },
+    "findSocials": {
+      "title": "Find social links",
+      "type": "boolean",
+      "description": "Extract publicly linked social profiles from hotel pages.",
+      "default": true
+    },
+    "deduplicateResults": {
+      "title": "Deduplicate results",
+      "type": "boolean",
+      "description": "Remove duplicate hotels/websites from the output.",
+      "default": true
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "description": "Optional Apify proxy configuration. Useful for reliable public web requests.",
+      "editor": "proxy",
+      "default": {
+        "useApifyProxy": true
+      }
+    },
+    "debugMode": {
+      "title": "Debug mode",
+      "type": "boolean",
+      "description": "Save extra request/debug information to the key-value store.",
+      "default": false
+    }
+  }
+}
