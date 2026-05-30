@@ -229,7 +229,11 @@ export async function scanHotelWebsite(websiteUrl, input, options = {}) {
     }
   }
 
-  const merged = mergePageInfo(pages.map((page) => parseWebsitePage(page.html, page.url)), input);
+  const locationHint = input.location || inferCityFromUrl(home.url) || inferCityFromUrl(websiteUrl) || '';
+  const merged = mergePageInfo(pages.map((page) => parseWebsitePage(page.html, page.url)), {
+    ...input,
+    location: locationHint
+  });
   return {
     ...merged,
     title: homeInfo.title,
@@ -289,7 +293,7 @@ async function safeBuildFromWebsite(websiteUrl, context) {
     const score = confidenceBoost == null
       ? scoreWebsite(scan.finalUrl, scan.title, name, input.location)
       : Math.min(99, Math.max(confidenceBoost, scoreWebsite(scan.finalUrl, scan.title, name, input.location)));
-    const location = parseLocation(input.location);
+    const location = parseLocation(input.location || inferCityFromUrl(scan.finalUrl));
     return {
       hotelName: name,
       inputUrl,
@@ -453,7 +457,18 @@ function mergeSocials(rows) {
 
 function pickBestEmail(emails, location = '') {
   const city = parseLocation(location).city?.toLowerCase();
-  const otherCityHints = ['rome', 'paris', 'london', 'chicago', 'berlin', 'brussels', 'vienna', 'madrid', 'barcelona'];
+  const otherCityHints = [
+    'rome',
+    'paris',
+    'london',
+    'chicago',
+    'berlin',
+    'charlottenburg',
+    'brussels',
+    'vienna',
+    'madrid',
+    'barcelona'
+  ];
   const scored = emails.map((email) => {
     const local = email.split('@')[0] ?? '';
     let score = 0;
@@ -520,9 +535,43 @@ function normalizeHomepage(url) {
 }
 
 function deriveHotelName(title, url) {
+  const fromUrl = deriveHotelNameFromUrl(url);
+  if (fromUrl) return fromUrl;
   const fromTitle = cleanText(String(title ?? '').split('|')[0].split(' - ')[0]);
   if (fromTitle) return fromTitle;
   return getHostname(url).replace(/^www\./, '').split('.')[0].replace(/-/g, ' ');
+}
+
+function deriveHotelNameFromUrl(url) {
+  try {
+    const parsed = new URL(url);
+    const brand = humanizeSlug(parsed.hostname.replace(/^www\./, '').split('.')[0]);
+    const city = inferCityFromUrl(url);
+    if (brand && city) return `${brand} ${city}`;
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function inferCityFromUrl(url) {
+  try {
+    const blocked = new Set(['contact', 'about', 'hotel', 'hotels', 'rooms', 'offers', 'booking', 'en', 'us', 'home']);
+    const segment = new URL(url).pathname.split('/').map((part) => part.trim()).filter(Boolean)
+      .find((part) => /^[a-z][a-z-]{2,}$/i.test(part) && !blocked.has(part.toLowerCase()));
+    return segment ? humanizeSlug(segment) : null;
+  } catch {
+    return null;
+  }
+}
+
+function humanizeSlug(value) {
+  const cleaned = String(value ?? '').replace(/[-_]+/g, ' ').trim();
+  if (!cleaned) return null;
+  const spaced = cleaned.startsWith('the') && cleaned.length > 5 && !cleaned.includes(' ')
+    ? `the ${cleaned.slice(3)}`
+    : cleaned;
+  return spaced.replace(/\b[a-z]/g, (letter) => letter.toUpperCase());
 }
 
 function parseLocation(location) {
